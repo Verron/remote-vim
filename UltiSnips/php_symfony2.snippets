@@ -1,0 +1,451 @@
+# sugguestion? report bugs?
+# go to https://github.com/chrisyue/vim-snippets/issues
+
+priority 0
+
+snippet ltrait "Basic trait with namespace snippet" b
+namespace `!p
+abspath = os.path.abspath(path)
+m = re.search(r'(?<=(app/)).+(?=/)', abspath)
+if m:
+	nspace = m.group().replace('/', '\\')
+	snip.rv = nspace
+`;
+
+/**
+ * ${1:<Description>}
+ * @package ${2:`!p snip.rv = nspace`}
+ * @version ${3:1.0.0}
+ * @author ${4:`!v g:snips_author`}
+ */
+trait `!p
+snip.rv = re.match(r'.*(?=\.)', fn).group()
+`$5
+{
+	${6:// code}
+}
+endsnippet
+
+snippet liface "Basic interface with namespace snippet" b
+namespace `!p
+abspath = os.path.abspath(path)
+m = re.search(r'(?<=(app/)).+(?=/)', abspath)
+if m:
+	nspace = m.group().replace('/', '\\')
+	snip.rv = nspace
+`;
+
+/**
+ * ${1:<Description>}
+ * @package ${2:`!p snip.rv = nspace`}
+ * @version ${3:1.0.0}
+ * @author ${4:`!v g:snips_author`}
+ */
+interface `!p
+snip.rv = re.match(r'.*(?=\.)', fn).group()
+`$5
+{
+	${6:// code}
+}
+endsnippet
+
+snippet iface "Basic interface with namespace snippet" b
+namespace `!p
+abspath = os.path.abspath(path)
+m = re.search(r'(?<=(src/)).+(?=/)', abspath)
+if m:
+	nspace = m.group().replace('/', '\\')
+	snip.rv = nspace
+`;
+
+/**
+ * ${1:<Description>}
+ * @package ${2:`!p snip.rv = nspace`}
+ * @version ${3:1.0.0}
+ * @author ${4:`!v g:snips_author`}
+ */
+interface `!p
+snip.rv = re.match(r'.*(?=\.)', fn).group()
+`$5
+{
+	${6:// code}
+}
+endsnippet
+
+snippet cfunc "Public class function" b
+/**
+ * ${1:Function for `!p snip.rv = re.match(r'.*(?=\.)', fn).group()`}
+ *
+ * @author ${2:`!v g:snips_author`}
+ * @return ${3:void}
+ */
+${4:public} function ${5:name}(${6:$param})
+{
+	${7:// code}
+}
+$0
+endsnippet
+
+snippet ifunc "Public interface function" b
+/**
+ * ${1:Function for `!p snip.rv = re.match(r'.*(?=\.)', fn).group()`}
+ *
+ * @author ${2:`!v g:snips_author`}
+ * @return ${3:void}
+ */
+${4:public} function ${5:name}(${6:$param});
+$0
+endsnippet
+
+snippet leclass "Basic class with namespace snippet" b
+namespace `!p
+abspath = os.path.abspath(path)
+m = re.search(r'(?<=(app/)).+(?=/)', abspath)
+if m:
+	nspace = m.group().replace('/', '\\')
+	snip.rv = nspace
+`;
+
+use Illuminate\Database\Eloquent\Model as Eloquent;
+
+/**
+ * ${1:<Description>}
+ * @package ${2:`!p snip.rv = nspace`}
+ * @version ${3:1.0.0}
+ * @author ${4:`!v g:snips_author`}
+ */
+class `!p
+snip.rv = re.match(r'.*(?=\.)', fn).group()
+` extends Eloquent$5
+{
+	/**
+	 * Table for Clearing Profile
+	 *
+	 * @type string
+	 */
+	protected $table = '${6:table name}';
+	
+	${7:// code}
+}$0
+endsnippet
+
+snippet lclass "Basic class with namespace snippet" b
+namespace `!p
+abspath = os.path.abspath(path)
+m = re.search(r'(?<=(app/)).+(?=/)', abspath)
+if m:
+	nspace = m.group().replace('/', '\\')
+	snip.rv = nspace
+`;
+
+/**
+ * ${1:<Description>}
+ * @package ${2:`!p snip.rv = nspace`}
+ * @version ${3:1.0.0}
+ * @author ${4:`!v g:snips_author`}
+ */
+class `!p
+snip.rv = re.match(r'.*(?=\.)', fn).group()
+`$5
+{
+	${6:// code}
+}
+endsnippet
+
+snippet class "Basic class with namespace snippet" b
+namespace `!p
+abspath = os.path.abspath(path)
+m = re.search(r'(?<=(src/)).+(?=/)', abspath)
+if m:
+	nspace = m.group().replace('/', '\\')
+	snip.rv = nspace
+`;
+
+/**
+ * ${1:<Description>}
+ * @package ${2:`!p snip.rv = nspace`}
+ * @version ${3:1.0.0}
+ * @author ${4:`!v g:snips_author`}
+ */
+class `!p
+snip.rv = re.match(r'.*(?=\.)', fn).group()
+`$5
+{
+	${6:// code}
+}
+endsnippet
+
+snippet contr "Symfony2 controller" b
+namespace `!p
+abspath = os.path.abspath(path)
+m = re.search(r'[A-Z].+(?=/)', abspath)
+if m:
+	snip.rv = m.group().replace('/', '\\')
+`;
+
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
+
+/**
+ * ${1:@author `!v g:snips_author`}
+ */
+class `!p
+snip.rv = re.match(r'.*(?=\.)', fn).group()
+` extends Controller
+{
+}
+endsnippet
+
+snippet act "Symfony2 action" b
+/**
+ * @Route("${3}", name="${4}")
+ * @Method({${5:"POST"}})
+ * @Template()
+ */
+public function ${1}Action(${2})
+{
+	${6}
+}
+endsnippet
+
+snippet actt "Symfony2 action and template" b
+/**
+ * @Route("${3}", name="${4}")
+ * @Method({${5:"GET"}})
+ * @Template()
+ */
+public function ${1}Action(${2})
+{
+	${6}
+	return [];
+}`!p
+abspath = os.path.abspath(path)`
+endsnippet
+
+snippet comm "Symfony2 command" b
+namespace `!p
+abspath = os.path.abspath(path)
+m = re.search(r'(?<=(src/)).+(?=/)', abspath)
+if m:
+	nspace = m.group().replace('/', '\\')
+	snip.rv = nspace
+`;
+
+use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Output\OutputInterface;
+
+/**
+ * ${1:<Description>}
+ *
+ * @package ${2:`!p snip.rv = nspace`}
+ * @version ${3:1.0.0}
+ * @author ${4:`!v g:snips_author`}
+ */
+class `!p
+classnm = re.match(r'.*(?=\.)', fn).group()
+snip.rv = classnm 
+` extends Command$5
+{
+	/**
+	 * Configuration for `!p snip.rv = classnm ` Command
+	 *
+	 * @author $4
+	 * @return ${6:void}
+	 */
+	protected function configure()
+	{
+		$this->setName('${7:example:command}')
+			->setDescription('${8:Example Command for Symfony Console}')
+			->addArgument('${9:name}', InputArgument::REQUIRED, '${10:Example Argument}'});
+	}
+
+	/**
+	 * Execution for `!p snip.rv = classnm ` Command
+	 *
+	 * @author $4
+	 * @param InputInterface $input
+	 * @param OutputInterface $output
+	 * @return ${6:void}
+	 */
+	protected function execute(InputInterface $input, OutputInterface $output)
+	{
+		${11: //code}
+	}
+}
+endsnippet
+
+snippet subs "Symfony2 subscriber" b
+namespace `!p
+abspath = os.path.abspath(path)
+m = re.search(r'[A-Z].+(?=/)', abspath)
+if m:
+	snip.rv = m.group().replace('/', '\\')
+`;
+
+use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+
+/**
+ * ${1:@author `!v g:snips_author`}
+ */
+class `!p
+snip.rv = re.match(r'.*(?=\.)', fn).group()
+` implements EventSubscriberInterface
+{
+	public function __construct()
+	{
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public static function getSubscribedEvents()
+	{
+		return [];
+	}
+}
+endsnippet
+
+snippet transf "Symfony2 form data transformer" b
+namespace `!p
+abspath = os.path.abspath(path)
+m = re.search(r'[A-Z].+(?=/)', abspath)
+if m:
+	snip.rv = m.group().replace('/', '\\')
+`;
+
+use Symfony\Component\Form\DataTransformerInterface;
+use Symfony\Component\Form\Exception\TransformationFailedException;
+
+/**
+ * ${3:@author `!v g:snips_author`}
+ */
+class `!p
+snip.rv = re.match(r'.*(?=\.)', fn).group()
+` implements DataTransformerInterface
+{
+	/**
+	 * {@inheritDoc}
+	 */
+	public function transform(${1})
+	{
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public function reverseTransform(${2})
+	{
+	}
+}
+endsnippet
+
+snippet ent "Symfony2 doctrine entity" b
+namespace `!p
+abspath = os.path.abspath(path)
+m = re.search(r'[A-Z].+(?=/)', abspath)
+if m:
+	snip.rv = m.group().replace('/', '\\')
+`;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * ${3:@author `!v g:snips_author`}
+ *
+ * @ORM\Entity()
+ * @ORM\Table(name="`!p
+tmp = re.match(r'.*(?=\.)', fn).group()
+tmp = re.sub(r'\B([A-Z])', r'_\1', tmp)
+snip.rv = tmp.lower()
+`")
+ */
+`!p
+m = re.search(r'Abstract', path)
+if m:
+	snip.rv = 'abstract '
+`class `!p
+snip.rv = re.match(r'.*(?=\.)', fn).group()
+`
+{
+	/**
+	 * @ORM\Column(type="integer")
+	 * @ORM\GeneratedValue
+	 * @ORM\Id
+	 */
+	private $id;
+}
+endsnippet
+
+snippet form "Symfony2 form type" b
+namespace `!p
+abspath = os.path.abspath(path)
+m = re.search(r'[A-Z].+(?=/)', abspath)
+if m:
+	snip.rv = m.group().replace('/', '\\')
+`;
+
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+
+/**
+ * ${2:@author `!v g:snips_author`}
+ */
+class `!p
+snip.rv = re.match(r'.*(?=\.)', fn).group()
+` extends AbstractType
+{
+	/**
+	 * {@inheritDoc}
+	 */
+	public function buildForm(FormBuilderInterface $builder, array $options)
+	{
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public function setDefaultOptions(OptionsResolverInterface $resolver)
+	{
+		$resolver->setDefaults();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	public function getName()
+	{
+		return '${1}';
+	}
+}
+endsnippet
+
+snippet ev "Symfony2 event" b
+namespace `!p
+abspath = os.path.abspath(path)
+m = re.search(r'[A-Z].+(?=/)', abspath)
+if m:
+	snip.rv = m.group().replace('/', '\\')
+`;
+
+use Symfony\Component\EventDispatcher\Event;
+
+/**
+ * ${2:@author `!v g:snips_author`}
+ */
+class `!p
+snip.rv = re.match(r'.*(?=\.)', fn).group()
+` extends Event
+{
+}
+endsnippet
+
+snippet redir "Symfony2 redirect"
+$this->redirect($this->generateUrl('${1}', ${2}));
+endsnippet
