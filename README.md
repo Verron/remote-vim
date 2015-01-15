@@ -24,11 +24,11 @@ or
 Change Pathogen install method of
 
 	cd ~/.vim/bundle
-	git clone \[plugin repository\] \[repository name\]
+	git clone [plugin repository] [repository name]
 to
 
 	cd ~/.vim
-	git submodule add \[plugin repository\] bundle/\[repository name\] 
+	git submodule add [plugin repository] bundle/[repository name] 
 
 # Dependency
 CTags
