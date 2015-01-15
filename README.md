@@ -1,10 +1,10 @@
 # Initial Setup
 
 #### Go to Home Directory and Remove old .vim folder
-cd<br>
-or<br>
-cd ~<br>
-mv .vim .vim.bak<br>
+	cd<br>
+	or<br>
+	cd ~<br>
+	mv .vim .vim.bak<br>
 
 #### Clone Repository
 git clone git@repositories.dev.local:verron.knowles/remote-vim.git .vim<br>
