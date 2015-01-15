@@ -12,6 +12,7 @@ Move old vim folder
 #### Clone Repository
 	git clone git@repositories.dev.local:verron.knowles/remote-vim.git .vim
 or
+
 	git clone http://repositories.dev.local/verron.knowles/remote-vim.git .vim
 
 #### Install Plugins
@@ -25,6 +26,7 @@ Change Pathogen install method of
 	cd ~/.vim/bundle
 	git clone \[plugin repository\] \[repository name\]
 to
+
 	cd ~/.vim
 	git submodule add \[plugin repository\] bundle/\[repository name\] 
 
