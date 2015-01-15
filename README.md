@@ -17,6 +17,13 @@ git submodule init
 git submodule update
 
 #### Add new Plugin
+Change Pathogen install method of
+
+cd ~/.vim/bundle
+git clone \[plugin repository\] \[repository name\]
+to
+cd ~/.vim
+git submodule add \[plugin repository\] bundle/\[repository name\] 
 
 # Dependency
 CTags - sudo apt-get install ctags
