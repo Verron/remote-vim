@@ -3,8 +3,10 @@
 #### Go to Home Directory and Remove old .vim folder
 	cd
 or
+
 	cd ~
 Move old vim folder
+
 	mv .vim .vim.bak
 
 #### Clone Repository
