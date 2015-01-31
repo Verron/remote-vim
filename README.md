@@ -1,8 +1,12 @@
 # Initial Setup
 
-### Go to Home Directory and Remove old .vim folder
+### Go to Home Directory and Remove old .vim folder.
 	cd ~
 	mv .vim .vim.bak
+
+### Don't forget symbolic link
+
+	ln -s .vim/.vimrc .vimrc
 
 ### Clone Repository
 
