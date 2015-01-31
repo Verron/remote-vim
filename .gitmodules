@@ -34,3 +34,15 @@
 [submodule "bundle/vim-multiple-cursors"]
 	path = bundle/vim-multiple-cursors
 	url = https://github.com/terryma/vim-multiple-cursors.git
+[submodule "bundle/vim-colors-solarized"]
+	path = bundle/vim-colors-solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/vim-colors-gruvbox"]
+	path = bundle/vim-colors-gruvbox
+	url = https://github.com/morhetz/gruvbox
+[submodule "bundle/vim-tagbar"]
+	path = bundle/vim-tagbar
+	url = https://github.com/majutsushi/tagbar
+[submodule "bundle/vim-fugitive"]
+	path = bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive

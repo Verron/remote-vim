@@ -1,19 +1,12 @@
 # Initial Setup
 
 ### Go to Home Directory and Remove old .vim folder
-	cd
-or
-
 	cd ~
-Move old vim folder
-
 	mv .vim .vim.bak
 
 ### Clone Repository
-	git clone git@repositories.dev.local:verron.knowles/remote-vim.git .vim
-or
 
-	git clone http://repositories.dev.local/verron.knowles/remote-vim.git .vim
+	git clone https://github.com/Verron/remote-vim .vim
 
 ### Install Plugins
 	cd .vim
@@ -31,6 +24,16 @@ to
 	git submodule add [plugin repository] bundle/[repository name] 
 
 # Dependency
-CTags
+## CTags
 
 	sudo apt-get install ctags
+## Powerline Fonts
+
+Reference: http://askubuntu.com/questions/283908/how-can-i-install-and-use-powerline-plugin
+
+	wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
+	sudo mv PowerlineSymbols.otf /usr/share/fonts/
+	sudo fc-cache -vf
+	sudo mv 10-powerline-symbols.conf /etc/fonts/conf.d/
+## Terminator Solarized Scheme 
+See https://github.com/ghuntley/terminator-solarized for more detail

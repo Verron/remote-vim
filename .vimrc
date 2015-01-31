@@ -20,6 +20,11 @@ autocmd VimEnter * nested call RestoreSess()
 
 execute pathogen#infect()
 syntax on
+set t_Co=256
+"let g:solarized_termcolors=256
+set background=dark
+set mouse=a
+colorscheme solarized 
 set ruler
 set nocompatible
 set number
@@ -29,7 +34,6 @@ filetype plugin indent on
 
 nmap <F7> :NERDTreeToggle<cr>
 nmap <F8> :TagbarToggle<cr>
-set mouse=a
 map <ScrollWheelUp> <C-Y>
 map <ScrollWheelDown> <C-E>
 
@@ -116,3 +120,8 @@ while i <= 9
     execute 'nnoremap <Leader>' . i . ' :' . i . 'wincmd w<CR>'
     let i = i + 1
 endwhile
+
+" Airline Configurations
+set guifont=Liberation\ Mono\ for\ Powerline\ 10
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
