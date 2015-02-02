@@ -30,7 +30,7 @@ set nocompatible
 set number
 
 filetype plugin on
-filetype plugin indent on
+"filetype plugin indent on
 
 nmap <F7> :NERDTreeToggle<cr>
 nmap <F8> :TagbarToggle<cr>
@@ -45,6 +45,8 @@ nmap <leader>f :bnext<cr>
 nmap <leader>e :badd 
 nmap <leader>l :ls<cr>:b
 nmap <leader>s :%s/
+nmap <leader>c :tnext<cr>
+nmap <leader>x :tprevious<cr>
 let NERDTreeMapOpenInTab='<ENTER>'
 
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
@@ -75,7 +77,7 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
-let g:snips_author="Verron Knowles <Verron.Knowles@ipayx.com>"
+let g:snips_author="Verron Knowles <Verron.Knowles@develme.com>"
 vmap <C-c> y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
 nmap <C-v> :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p
 
@@ -122,6 +124,8 @@ while i <= 9
 endwhile
 
 " Airline Configurations
-set guifont=Liberation\ Mono\ for\ Powerline\ 10
+"set guifont=Liberation\ Mono\ for\ Powerline\ 10
+set guifont=Ubuntu\ Mono\ derivative\ Powerline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+
