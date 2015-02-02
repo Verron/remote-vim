@@ -1,0 +1,9 @@
+{
+    "shell_exec": "shell_exec\n\n(PHP 4, PHP 5)\nshell_exec - Execute command via shell and return the complete output as\na string\n",
+    "Description": "Description\n\nstring shell_exec ( string $cmd )\nThis function is identical to the backtick_operator.\n",
+    "Parameters": "Parameters\n\n  cmd\n      The command that will be executed.\n",
+    "Return Values": "Return Values\n\nThe output from the executed command or NULL if an error occurred or the\ncommand produces no output.\n     Note:\n     This function can return NULL both when an error occurs or the\n     program produces no output. It is not possible to detect execution\n     failures using this function. exec() should be used when access to\n     the program exit code is required.\n",
+    "Examples": "Examples\n\nExample #1 A shell_exec() example\n<?php\n$output\u00a0=\u00a0shell_exec('ls\u00a0-lart');\necho\u00a0\"<pre>$output<\/pre>\";\n?>\n",
+    "Notes": "Notes\n\n     Note:\n     This function is disabled when PHP is running in safe_mode.\n",
+    "See Also": "See Also\n\n    * exec() - Execute an external program\n    * escapeshellcmd() - Escape shell metacharacters\n[add_a_note]_add_a_note\n"
+}

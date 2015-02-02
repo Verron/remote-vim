@@ -129,3 +129,48 @@ set guifont=Ubuntu\ Mono\ derivative\ Powerline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 
+" Scripts
+" PHP Documentation
+" Define the sections desired
+let g:php_not_sections = "Examples,Changelog,Notes"
+autocmd FileType php set keywordprg=~/.vim/scripts/php-documentation.php
+if !exists("g:php_doc_command")
+	let g:php_doc_command = "~/.vim/scripts/php-documentation.php"
+endif
+
+function! s:get_visual_selection()
+	" Why is this not a built-in Vim script function?!
+	let [lnum1, col1] = getpos("'<")[1:2]
+	let [lnum2, col2] = getpos("'>")[1:2]
+	let lines = getline(lnum1, lnum2)
+	let lines[-1] = lines[-1][: col2 - (&selection == 'inclusive' ? 1 : 2)]
+	let lines[0] = lines[0][col1 - 1:]
+	return join(lines, "\n")
+endfunction
+
+function! GetPHPDoc()
+	" Get the PHP Doc for cursor word
+	let wordUnCursor = expand("<cword>")
+	let doc_response = system(g:php_doc_command . " " . wordUnCursor . " " . g:php_not_sections)
+
+	" Open new window and set it up
+	let phpdocwinnr = bufwinnr('^__PHP_DOCUMENTATION__$')
+	if (phpdocwinnr >= 0)
+		execute phpdocwinnr . "wincmd w"
+		normal! ggdG
+	else
+		vnew __PHP_DOCUMENTATION__
+		vertical resize 50
+		setlocal filetype=phpdoc bufhidden=wipe nowrap
+		setlocal buftype=nofile nobuflisted noswapfile
+	endif
+
+	" Insert script response
+	call append(0, split(doc_response, '\v\n'))
+	
+	" Move cursor to the first line
+	normal! gg
+endfunction
+
+nmap <S-k> :call GetPHPDoc()<cr>
+
