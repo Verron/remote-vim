@@ -1,9 +1,23 @@
+"##############################
+" Session Management
+"##############################
+" Detect if file names are passed. If so, no Session Business
+let g:disable_sessions = argc()
+autocmd StdinReadPre * let g:disable_sessions = 1
+
+"===============================
+" Session Functions
+"===============================
 fu! SaveSess()
-    execute 'mksession! ' . getcwd() . '/.session.vim'
+    "Only save session if arguments don't exist
+    if (g:disable_sessions == 0) 
+	execute 'mksession! ' . getcwd() . '/.session.vim'
+    endif
 endfunction
 
 fu! RestoreSess()
-if filereadable(getcwd() . '/.session.vim')
+"Only restore session if arguments don't exist
+if (g:disable_sessions == 0 && filereadable(getcwd() . '/.session.vim'))
     execute 'so ' . getcwd() . '/.session.vim'
     if bufexists(1)
         for l in range(1, bufnr('$'))
@@ -15,8 +29,14 @@ if filereadable(getcwd() . '/.session.vim')
 endif
 endfunction
 
+"===============================
+" Save/Restore sessions
+"===============================
 autocmd VimLeave * call SaveSess()
 autocmd VimEnter * nested call RestoreSess()
+"##############################
+" End Session Management
+"##############################
 
 execute pathogen#infect()
 syntax on
