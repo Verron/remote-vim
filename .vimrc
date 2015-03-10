@@ -49,6 +49,8 @@ set ruler
 set nocompatible
 set number
 
+set foldmethod=indent
+
 filetype plugin on
 "filetype plugin indent on
 
@@ -180,7 +182,7 @@ function! GetPHPDoc()
 		normal! ggdG
 	else
 		vnew __PHP_DOCUMENTATION__
-		vertical resize 50
+		vertical resize 70
 		setlocal filetype=phpdoc bufhidden=wipe nowrap
 		setlocal buftype=nofile nobuflisted noswapfile
 	endif
@@ -194,3 +196,5 @@ endfunction
 
 nmap <S-k> :call GetPHPDoc()<cr>
 
+" Remove pesky white spaces
+autocmd BufWritePre *.py :%s/\s\+$//e
