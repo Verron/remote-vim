@@ -72,6 +72,22 @@ snip.rv = re.match(r'.*(?=\.)', fn).group()
 }
 endsnippet
 
+snippet func "Basic function" b
+/**
+ * ${1:Function within `!p snip.rv = re.match(r'.*(?=\.)', fn).group()`}
+ *
+ * @author ${2:`!v g:snips_author`}
+ * @return ${3:void}
+ */
+if (!function_exists('${4:name}')) {
+	function ${4:name}(${5:$param})
+	{
+		${6:// code}
+	}
+}
+$0
+endsnippet
+
 snippet cfunc "Public class function" b
 /**
  * ${1:Function for `!p snip.rv = re.match(r'.*(?=\.)', fn).group()`}
