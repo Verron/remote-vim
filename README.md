@@ -42,6 +42,9 @@ Reference: http://askubuntu.com/questions/283908/how-can-i-install-and-use-power
 ## Terminator Solarized Scheme 
 See https://github.com/ghuntley/terminator-solarized for more detail
 
+    mkdir ~/.config/terminator
+    cp ~/.vim/configurations/terminator/config ~/.config/terminator/
+
 ## CentOS/RHEL and older VIM
 CentOS's repositories contain an older version of VIM. Enter the following to upgrade. This has been tested on CentOS 6.5. If you have permission issues, try using sudo
 ### Install/Upgrade Python
