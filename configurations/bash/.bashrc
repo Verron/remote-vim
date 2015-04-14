@@ -7,9 +7,16 @@ Blue='\e[0;34m'
 Default='\e[0m'
 
 # Choose your Color
-MyColor=$Green
+if [ -n "${PromptColor+1}" ]; then
+    MyColor="${!PromptColor}"
+else
+    MyColor=$Default
+fi
 
+# Setup Bash Prompt
 export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[$MyColor\]\u\[$Default\]@\[$MyColor\]\h\[$Default\] [\[$MyColor\]\W\[$Default\]] \$ "
+
+# Import other .bashrc files
 source ~/.vim/configurations/bash/laravel/.bashrc
 source ~/.vim/configurations/bash/php/.bashrc
 
