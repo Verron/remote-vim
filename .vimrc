@@ -99,7 +99,10 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
-let g:snips_author="Verron Knowles <Verron.Knowles@develme.com>"
+
+" Author used for snippets
+let g:snips_author="Add g:snips_author to your vimrc file <support@develme.com>"
+
 vmap <C-c> y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
 nmap <C-v> :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p
 
