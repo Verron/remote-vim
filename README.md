@@ -63,3 +63,10 @@ Remove yum's VIM and compile from source
 	yum remove -y vim
 	yum install -y python-devel
 	
+## Install ctrlp-cmatcher
+Faster than the matcher used using vimscript
+
+    sudo apt-get install python-dev
+    git submodule add https://github.com/JazzCore/ctrlp-cmatcher/ bundle/ctrlp-cmatcher
+    cd bundle/ctrlp-cmatcher/
+    ./install.sh 
