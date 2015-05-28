@@ -108,6 +108,7 @@ nmap <C-v> :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p
 
 " CtrlP Plugin
 let g:ctrlp_map='<C-p>'
+let g:ctrlp_match_func = { 'match': 'matcher#cmatch' }
 
 set clipboard=unnamedplus
 set hidden
