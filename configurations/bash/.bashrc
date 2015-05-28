@@ -8,6 +8,7 @@ Green='\e[0;32m'
 Yellow='\e[0;33m'
 Blue='\e[0;34m'
 Default='\e[0m'
+GitColor='\e[1;32m'
 
 # Choose your Color
 if [ -n "${PromptColor+1}" ]; then
@@ -17,7 +18,7 @@ else
 fi
 
 # Setup Bash Prompt
-export PS1="\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[$MyColor\]\u\[$Default\]@\[$MyColor\]\h\[$Default\] [\[$MyColor\]\W\[$Default\]] \$ "
+export PS1="\[\e]0;\h: \w\a\]${debian_chroot:+($debian_chroot)}\[$MyColor\]\h\[$Default\] [\[$MyColor\]\W\[$Default\]]\[$Default\](\[$GitColor\]\$(git branch 2>/dev/null | grep '^*' | colrm 1 2)\[$Default\])\$ "
 
 # Import other .bashrc files
 source ~/.vim/configurations/bash/laravel/.bashrc
